@@ -37,7 +37,7 @@ struct cache_t {
 struct cache_t *
 cache_create(int size, int blocksize, int assoc, enum cache_policy policy)
 {
-// The cache is represented by a 2-D array of blocks. 
+// The cache is represented by a 2-D array of blocks.
 // The first dimension of the 2D array is "nsets" which is the number of sets (entries)
 // The second dimension is "assoc", which is the number of blocks in each set.
 
@@ -51,9 +51,13 @@ cache_create(int size, int blocksize, int assoc, enum cache_policy policy)
   // nblocks = X;
   // nsets = Y;
 
+  nblocks = (size*1024) / blocksize; //converts size in kb to byte, gets # of blocks
+  nsets = nblocks /assoc; //the number of sets is the number of blocks/ associativity
+  
+
   struct cache_t *C = (struct cache_t *)calloc(1, sizeof(struct cache_t));
-		
-  C->nsets = nsets; 
+
+  C->nsets = nsets;
   C->bsize = blocksize;
   C->assoc = assoc;
   C->policy = policy;
@@ -68,7 +72,7 @@ cache_create(int size, int blocksize, int assoc, enum cache_policy policy)
 }
 
 int
-cache_access(struct cache_t *cp, unsigned long address, 
+cache_access(struct cache_t *cp, unsigned long address,
              char access_type, unsigned long long now)
 {
 	//////////////////////////////////////////////////////////////////////
@@ -122,7 +126,7 @@ struct cache_t {
 struct cache_t *
 cache_create(int size, int blocksize, int assoc, enum cache_policy policy)
 {
-// The cache is represented by a 2-D array of blocks. 
+// The cache is represented by a 2-D array of blocks.
 // The first dimension of the 2D array is "nsets" which is the number of sets (entries)
 // The second dimension is "assoc", which is the number of blocks in each set.
 
@@ -208,7 +212,7 @@ struct cache_t {
 struct cache_t *
 cache_create(int size, int blocksize, int assoc, enum cache_policy policy)
 {
-// The cache is represented by a 2-D array of blocks. 
+// The cache is represented by a 2-D array of blocks.
 // The#ifndef __SKELETON_H__
 #define __SKELETON_H__
 
@@ -248,7 +252,7 @@ struct cache_t {
 struct cache_t *
 cache_create(int size, int blocksize, int assoc, enum cache_policy policy)
 {
-// The cache is represented by a 2-D array of blocks. 
+// The cache is represented by a 2-D array of blocks.
 // The first dimension of the 2D array is "nsets" which is the number of sets (entries)
 // The second dimension is "assoc", which is the number of blocks in each set.
 
@@ -263,8 +267,8 @@ cache_create(int size, int blocksize, int assoc, enum cache_policy policy)
   // nsets = Y;
 
   struct cache_t *C = (struct cache_t *)calloc(1, sizeof(struct cache_t));
-		
-  C->nsets = nsets; 
+
+  C->nsets = nsets;
   C->bsize = blocksize;
   C->assoc = assoc;
   C->policy = policy;
@@ -279,7 +283,7 @@ cache_create(int size, int blocksize, int assoc, enum cache_policy policy)
 }
 
 int
-cache_access(struct cache_t *cp, unsigned long address, 
+cache_access(struct cache_t *cp, unsigned long address,
              char access_type, unsigned long long now)
 {
 	//////////////////////////////////////////////////////////////////////
@@ -308,8 +312,8 @@ cache_access(struct cache_t *cp, unsigned long address,
   // nsets = Y;
 
   struct cache_t *C = (struct cache_t *)calloc(1, sizeof(struct cache_t));
-		
-  C->nsets = nsets; 
+
+  C->nsets = nsets;
   C->bsize = blocksize;
   C->assoc = assoc;
   C->policy = policy;
@@ -324,7 +328,7 @@ cache_access(struct cache_t *cp, unsigned long address,
 }
 
 int
-cache_access(struct cache_t *cp, unsigned long address, 
+cache_access(struct cache_t *cp, unsigned long address,
              char access_type, unsigned long long now)
 {
 	//////////////////////////////////////////////////////////////////////
@@ -341,7 +345,7 @@ cache_access(struct cache_t *cp, unsigned long address,
 
 #endifcreate(int size, int blocksize, int assoc, enum cache_policy policy)
 {
-// The cache is represented by a 2-D array of blocks. 
+// The cache is represented by a 2-D array of blocks.
 // The first dimension of the 2D array is "nsets" which is the number of sets (entries)
 // The second dimension is "assoc", which is the number of blocks in each set.
 
@@ -356,8 +360,8 @@ cache_access(struct cache_t *cp, unsigned long address,
   // nsets = Y;
 
   struct cache_t *C = (struct cache_t *)calloc(1, sizeof(struct cache_t));
-		
-  C->nsets = nsets; 
+
+  C->nsets = nsets;
   C->bsize = blocksize;
   C->assoc = assoc;
   C->policy = policy;
@@ -372,7 +376,7 @@ cache_access(struct cache_t *cp, unsigned long address,
 }
 
 int
-cache_access(struct cache_t *cp, unsigned long address, 
+cache_access(struct cache_t *cp, unsigned long address,
              char access_type, unsigned long long now)
 {
 	//////////////////////////////////////////////////////////////////////
@@ -392,8 +396,8 @@ cache_access(struct cache_t *cp, unsigned long address,
   // nsets = Y;
 
   struct cache_t *C = (struct cache_t *)calloc(1, sizeof(struct cache_t));
-		
-  C->nsets = nsets; 
+
+  C->nsets = nsets;
   C->bsize = blocksize;
   C->assoc = assoc;
   C->policy = policy;
@@ -408,7 +412,7 @@ cache_access(struct cache_t *cp, unsigned long address,
 }
 
 int
-cache_access(struct cache_t *cp, unsigned long address, 
+cache_access(struct cache_t *cp, unsigned long address,
              char access_type, unsigned long long now)
 {
 	//////////////////////////////////////////////////////////////////////
