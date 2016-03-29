@@ -51,6 +51,9 @@ cache_create(int size, int blocksize, int assoc, enum cache_policy policy)
   // nblocks = X;
   // nsets = Y;
 
+  nblocks = (size*1024) / blocksize; //converts size in kb to byte, gets # of blocks
+  nsets = nblocks /assoc; //the number of sets is the number of blocks/ associativity
+
   struct cache_t *C = (struct cache_t *)calloc(1, sizeof(struct cache_t));
 		
   C->nsets = nsets; 
