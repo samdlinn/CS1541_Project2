@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "trace_item.h"
 
 #define TRACE_BUFSIZE 1024*1024
@@ -59,17 +60,24 @@ int main(int argc, char **argv)
   struct trace_item *tr_entry;
   size_t size;
   char *trace_file_name;
-  int trace_view_on ;
-  
-  if (argc == 1) {
-    fprintf(stdout, "\nUSAGE: tv <trace_file> <switch - any character>\n");
-    fprintf(stdout, "\n(switch) to turn on or off individual item view.\n\n");
+  //variables to extract from args
+  int trace_view_on, cache_size, block_size, cache_sets, replacement_policy;
+
+  //conition for invalid number of arguments
+  //exits the program
+  if(argc != 7)
+  {
+    printf("USAGE: cache <trace_file> <trace_view_on> <cache size (power of 2)> <block size (power of 2) <cache associtivity (power of 2)> <replacement policy 0 => LRU 1 => FIFO\n");
     exit(0);
   }
-    
+
+  //extracts necessary command line arguments
   trace_file_name = argv[1];
-  trace_view_on = (argc == 3);
-  // here you should extract the cache parameters from the command line
+  trace_view_on = atoi(argv[2]);
+  cache_size = atoi(argv[3]);
+  block_size = atoi(argv[4]);
+  cache_sets = atoi(argv[5]);
+  replacement_policy = atoi(argv[6]);
 
   fprintf(stdout, "\n ** opening file %s\n", trace_file_name);
 
@@ -85,7 +93,7 @@ int main(int argc, char **argv)
 
   while(1) {
     size = trace_get_item(&tr_entry);
-   
+
     if (!size) {       /* no more instructions to simulate */
 	  printf("+ number of accesses : %d \n", accesses);
       printf("+ number of reads : %d \n", read_accesses);
@@ -97,21 +105,19 @@ int main(int argc, char **argv)
 			if (trace_view_on) printf("LOAD %x \n",tr_entry->Addr) ;
 			accesses ++;
 			read_accesses++ ;
-			// call cache_access(struct cache_t *cp, tr_entry->Addr, access_type) 
+			// call cache_access(struct cache_t *cp, tr_entry->Addr, access_type)
 	  }
 	  if (tr_entry->type == ti_STORE) {
     		  if (trace_view_on) printf("STORE %x \n",tr_entry->Addr) ;
 			accesses ++;
 			write_accesses++ ;
-			// call cache_access(struct cache_t *cp, tr_entry->Addr, access_type) 
+			// call cache_access(struct cache_t *cp, tr_entry->Addr, access_type)
 	  }
 	  // based on the value returned, update the statisctics for hits, misses and misses_with_writeback
-    }  
+    }
   }
 
   trace_uninit();
 
   exit(0);
 }
-
-
