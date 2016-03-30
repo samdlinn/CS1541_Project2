@@ -104,11 +104,12 @@ int main(int argc, char **argv)
       printf("+ number of writes : %d \n", write_accesses);
       printf("+ number of hits : %d \n", hits);
       printf("+ number of misses : %d \n", misses);
+      printf("+ number of misses with write back : %d \n", misses_with_writeback);
 	  break;
     }
     else{              /* process only loads and stores */;
 	  if (tr_entry->type == ti_LOAD) {
-			if (trace_view_on) printf("LOAD %x \n",tr_entry->Addr) ;
+			if (trace_view_on) printf("LOAD %x ",tr_entry->Addr) ;
 			accesses ++;
 			read_accesses++ ;
 			// call cache_access(struct cache_t *cp, tr_entry->Addr, access_type)
@@ -118,32 +119,51 @@ int main(int argc, char **argv)
       if(this_access == 0)
       {
         hits++;
+        if (trace_view_on)
+          printf("HIT\n");
       }
       //case for a miss
       else if(this_access == 1)
       {
         misses++;
+        if (trace_view_on)
+          printf("Miss\n");
       }
+      //miss with writeback
       else if(this_access == 2)
       {
-        misses_with_writeback;
+        misses_with_writeback++;
+        if (trace_view_on)
+          printf("Miss with writeback\n");
       }
 	  }
 	  if (tr_entry->type == ti_STORE) {
-    		  if (trace_view_on) printf("STORE %x \n",tr_entry->Addr) ;
+    		  if (trace_view_on) printf("STORE %x ",tr_entry->Addr) ;
 			accesses ++;
 			write_accesses++ ;
 			// call cache_access(struct cache_t *cp, tr_entry->Addr, access_type)
       int this_access = cache_access(my_cache, tr_entry->Addr, 1 , counter);
       //case for cache hit
+      //case for cache hit
       if(this_access == 0)
       {
         hits++;
+        if (trace_view_on)
+          printf("HIT\n");
       }
       //case for a miss
       else if(this_access == 1)
       {
         misses++;
+        if (trace_view_on)
+          printf("Miss\n");
+      }
+      //miss with writeback
+      else if(this_access == 2)
+      {
+        misses_with_writeback++;
+        if (trace_view_on)
+          printf("Miss with writeback\n");
       }
 	  }
 	  // based on the value returned, update the statisctics for hits, misses and misses_with_writeback
