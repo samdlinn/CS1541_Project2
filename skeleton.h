@@ -16,6 +16,12 @@ struct cache_blk_t {
   unsigned long tag;
   char valid;
   char dirty;
+  //added time stamp for lru
+  unsigned long long last_time;
+  //added time stamp for fifo
+  unsigned long long first_time;
+
+
 /* Add either a pointer (to construct FIFO or LRU lists)
    or a time stamp to implement the replacement polity */
 };
@@ -37,26 +43,36 @@ struct cache_t {
 struct cache_t *
 cache_create(int size, int blocksize, int assoc, enum cache_policy policy)
 {
-// The cache is represented by a 2-D array of blocks. 
+// The cache is represented by a 2-D array of blocks.
 // The first dimension of the 2D array is "nsets" which is the number of sets (entries)
 // The second dimension is "assoc", which is the number of blocks in each set.
 
 	int i;
-  int nblocks = 1; // number of blocks in the cache
-  int nsets = 1;   // number of sets (entries) in the cache
 
-  //
-  // YOUR JOB: calculate the number of sets and blocks in the cache
-  //
-  // nblocks = X;
-  // nsets = Y;
+  //this block assignes the appropriate variabes nblocks and nsets
 
   nblocks = (size*1024) / blocksize; //converts size in kb to byte, gets # of blocks
   nsets = nblocks /assoc; //the number of sets is the number of blocks/ associativity
 
+  //
+
+  //function that returns the index of a memory access
+  unsigned long get_index(unsigned long address, int nsets, int blocksize)
+  {
+    return (address / blocksize) % nsets;
+  }
+
+  //function returns the tag for an memory access
+  unsigned long get_tag(unsigned long address, int nsets, int blocksize)
+  {
+    return (address / blocksize) / nsets;
+  }
+
+  //int is_hit(struct cache_t *cp, unsigned long )
+
   struct cache_t *C = (struct cache_t *)calloc(1, sizeof(struct cache_t));
-		
-  C->nsets = nsets; 
+
+  C->nsets = nsets;
   C->bsize = blocksize;
   C->assoc = assoc;
   C->policy = policy;
@@ -70,8 +86,10 @@ cache_create(int size, int blocksize, int assoc, enum cache_policy policy)
   return C;
 }
 
+
+
 int
-cache_access(struct cache_t *cp, unsigned long address, 
+cache_access(struct cache_t *cp, unsigned long address,
              char access_type, unsigned long long now)
 {
 	//////////////////////////////////////////////////////////////////////
@@ -87,4 +105,3 @@ cache_access(struct cache_t *cp, unsigned long address,
 }
 
 #endif
-
