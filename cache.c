@@ -133,7 +133,8 @@ int main(int argc, char **argv)
       else if(this_access == 2)
       {
         misses_with_writeback++;
-        if (trace_view_on)
+        misses++;
+	if (trace_view_on)
           printf("Miss with writeback\n");
       }
 	  }
@@ -162,6 +163,7 @@ int main(int argc, char **argv)
       else if(this_access == 2)
       {
         misses_with_writeback++;
+	misses++;
         if (trace_view_on)
           printf("Miss with writeback\n");
       }
