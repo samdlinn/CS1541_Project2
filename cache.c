@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "trace_item.h"
+#include "skeleton.h"
 
 #define TRACE_BUFSIZE 1024*1024
 
@@ -62,6 +63,7 @@ int main(int argc, char **argv)
   char *trace_file_name;
   //variables to extract from args
   int trace_view_on, cache_size, block_size, cache_sets, replacement_policy;
+  unsigned long long counter = 0;
 
   //conition for invalid number of arguments
   //exits the program
@@ -91,13 +93,17 @@ int main(int argc, char **argv)
   trace_init();
   // here should call cache_create(cache_size, block_size, associativity, replacement_policy)
 
+  struct cache_t *my_cache = (struct cache_t*)cache_create(cache_size, block_size, cache_sets, replacement_policy);
+
   while(1) {
     size = trace_get_item(&tr_entry);
 
     if (!size) {       /* no more instructions to simulate */
-	  printf("+ number of accesses : %d \n", accesses);
+	     printf("+ number of accesses : %d \n", accesses);
       printf("+ number of reads : %d \n", read_accesses);
       printf("+ number of writes : %d \n", write_accesses);
+      printf("+ number of hits : %d \n", hits);
+      printf("+ number of misses : %d \n", misses);
 	  break;
     }
     else{              /* process only loads and stores */;
@@ -106,15 +112,43 @@ int main(int argc, char **argv)
 			accesses ++;
 			read_accesses++ ;
 			// call cache_access(struct cache_t *cp, tr_entry->Addr, access_type)
+
+      int this_access = cache_access(my_cache, tr_entry->Addr, 0 , counter);
+      //case for cache hit
+      if(this_access == 0)
+      {
+        hits++;
+      }
+      //case for a miss
+      else if(this_access == 1)
+      {
+        misses++;
+      }
+      else if(this_access == 2)
+      {
+        misses_with_writeback;
+      }
 	  }
 	  if (tr_entry->type == ti_STORE) {
     		  if (trace_view_on) printf("STORE %x \n",tr_entry->Addr) ;
 			accesses ++;
 			write_accesses++ ;
 			// call cache_access(struct cache_t *cp, tr_entry->Addr, access_type)
+      int this_access = cache_access(my_cache, tr_entry->Addr, 1 , counter);
+      //case for cache hit
+      if(this_access == 0)
+      {
+        hits++;
+      }
+      //case for a miss
+      else if(this_access == 1)
+      {
+        misses++;
+      }
 	  }
 	  // based on the value returned, update the statisctics for hits, misses and misses_with_writeback
     }
+    counter++;
   }
 
   trace_uninit();
