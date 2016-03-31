@@ -19,6 +19,7 @@ unsigned int misses = 0;
 unsigned int misses_with_writeback = 0;
 double miss_rate = 0.0;
 
+
 void trace_init()
 {
   trace_buf = malloc(sizeof(struct trace_item) * TRACE_BUFSIZE);
@@ -100,7 +101,15 @@ int main(int argc, char **argv)
     size = trace_get_item(&tr_entry);
 
     if (!size) {       /* no more instructions to simulate */
-     	printf("+ number of accesses : %d \n", accesses);
+     	printf("+ Cache Size : %dKB\n+ Block Size : %dB\n+ %d-way set associative\n", cache_size, block_size, cache_sets);
+	if(replacement_policy) {
+		// replacement policy != 0
+		printf("+ Replacement Policy : FIFO\n");
+	} else {
+		// replacement_policy is 0
+		printf("+ Replacement Policy : LRU\n");
+	}
+	printf("+ number of accesses : %d \n", accesses);
       	printf("+ number of reads : %d \n", read_accesses);
       	printf("+ number of writes : %d \n", write_accesses);
       	printf("+ number of hits : %d \n", hits);
