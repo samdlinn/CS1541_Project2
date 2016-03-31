@@ -17,6 +17,7 @@ unsigned int write_accesses = 0;
 unsigned int hits = 0;
 unsigned int misses = 0;
 unsigned int misses_with_writeback = 0;
+double miss_rate = 0.0;
 
 void trace_init()
 {
@@ -99,12 +100,14 @@ int main(int argc, char **argv)
     size = trace_get_item(&tr_entry);
 
     if (!size) {       /* no more instructions to simulate */
-	     printf("+ number of accesses : %d \n", accesses);
-      printf("+ number of reads : %d \n", read_accesses);
-      printf("+ number of writes : %d \n", write_accesses);
-      printf("+ number of hits : %d \n", hits);
-      printf("+ number of misses : %d \n", misses);
-      printf("+ number of misses with write back : %d \n", misses_with_writeback);
+     	printf("+ number of accesses : %d \n", accesses);
+      	printf("+ number of reads : %d \n", read_accesses);
+      	printf("+ number of writes : %d \n", write_accesses);
+      	printf("+ number of hits : %d \n", hits);
+      	printf("+ number of misses : %d \n", misses);
+      	printf("+ number of misses with write back : %d \n", misses_with_writeback);
+	miss_rate = (double)misses/accesses;
+	printf("+ rate of misses : %f \n", miss_rate);
 	  break;
     }
     else{              /* process only loads and stores */;
