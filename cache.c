@@ -58,6 +58,12 @@ int trace_get_item(struct trace_item **item)
   return 1;
 }
 
+//function that returns whether a number is power of two
+int is_power_of_two(int x){
+  return x && (!(x&(x-1)));
+}
+
+
 int main(int argc, char **argv)
 {
   struct trace_item *tr_entry;
@@ -82,6 +88,34 @@ int main(int argc, char **argv)
   block_size = atoi(argv[4]);
   cache_sets = atoi(argv[5]);
   replacement_policy = atoi(argv[6]);
+  
+  
+  //checks if args are correct
+  if (!is_power_of_two(cache_size)) {
+    fprintf(stdout, "Cache size must be a power of 2\n");
+    exit(0);
+  }
+
+  if (!is_power_of_two(block_size)){
+    fprintf(stdout, "Block size must be a power of 2\n");
+    exit(0);
+  }
+
+  if (!is_power_of_two(cache_sets)) {
+    fprintf(stdout, "Associtivity must be a power of 2\n");
+    exit(0);
+  }
+
+  if (trace_view_on != 0 && trace_view_on != 1){
+    fprintf(stdout, "Trace view must be on (1) or off (0)\n");
+    exit(0);
+  }
+
+  if (replacement_policy != 0 && replacement_policy != 1){
+    fprintf(stdout, "Replacement policy must be LRU (0) or FIFO (1)\n");
+    exit(0);
+  }
+  
 
   fprintf(stdout, "\n ** opening file %s\n", trace_file_name);
 
