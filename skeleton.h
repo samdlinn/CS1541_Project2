@@ -200,7 +200,7 @@ int is_miss(struct cache_t *cp, unsigned long access_tag, long access_index,
 
 int
 cache_access(struct cache_t *cp, unsigned long address,
-             char access_type, unsigned long long now)
+             char access_type, unsigned long long now, int trace_view_on)
 {
 	//////////////////////////////////////////////////////////////////////
   //
@@ -233,6 +233,8 @@ cache_access(struct cache_t *cp, unsigned long address,
   }
 
   miss_wb = is_miss(cp, access_tag, access_index, access_type, now);
+  if(trace_view_on)
+		printf("Evicting index %X from cache ", (unsigned int)access_index);
 
   if(miss_wb == 0)
   {

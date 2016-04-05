@@ -160,7 +160,7 @@ int main(int argc, char **argv)
 			read_accesses++ ;
 			// call cache_access(struct cache_t *cp, tr_entry->Addr, access_type)
 
-      int this_access = cache_access(my_cache, tr_entry->Addr, 0 , counter);
+      int this_access = cache_access(my_cache, tr_entry->Addr, 0 , counter, trace_view_on);
       //case for cache hit
       if(this_access == 0)
       {
@@ -189,7 +189,7 @@ int main(int argc, char **argv)
 			accesses ++;
 			write_accesses++ ;
 			// call cache_access(struct cache_t *cp, tr_entry->Addr, access_type)
-      int this_access = cache_access(my_cache, tr_entry->Addr, 1 , counter);
+      int this_access = cache_access(my_cache, tr_entry->Addr, 1 , counter, trace_view_on);
       //case for cache hit
       //case for cache hit
       if(this_access == 0)
