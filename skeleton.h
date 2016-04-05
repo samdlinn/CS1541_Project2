@@ -108,8 +108,9 @@ char access_type, unsigned long long now)
       return 1; //cache hit
     }
 
-    return 0;
+
   }
+  return 0;
 }
 
 //returns the index of the least recently used
