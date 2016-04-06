@@ -1,0 +1,468 @@
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large1.tr
++ Cache Size : 1KB
++ Block Size : 4B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 30438865 
++ number of reads : 20813032 
++ number of writes : 9625833 
++ number of hits : 19479164 
++ number of misses : 10959701 
++ number of misses with write back : 2224202 
++ rate of misses : 0.360056 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large1.tr
++ Cache Size : 1KB
++ Block Size : 16B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 30438865 
++ number of reads : 20813032 
++ number of writes : 9625833 
++ number of hits : 20956413 
++ number of misses : 9482452 
++ number of misses with write back : 1585103 
++ rate of misses : 0.311524 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large1.tr
++ Cache Size : 1KB
++ Block Size : 32B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 30438865 
++ number of reads : 20813032 
++ number of writes : 9625833 
++ number of hits : 19257366 
++ number of misses : 11181499 
++ number of misses with write back : 2102724 
++ rate of misses : 0.367343 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large1.tr
++ Cache Size : 1KB
++ Block Size : 64B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 30438865 
++ number of reads : 20813032 
++ number of writes : 9625833 
++ number of hits : 15659206 
++ number of misses : 14779659 
++ number of misses with write back : 3367378 
++ rate of misses : 0.485552 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large1.tr
++ Cache Size : 1KB
++ Block Size : 128B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 30438865 
++ number of reads : 20813032 
++ number of writes : 9625833 
++ number of hits : 12904543 
++ number of misses : 17534322 
++ number of misses with write back : 4197343 
++ rate of misses : 0.576050 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large1.tr
++ Cache Size : 1KB
++ Block Size : 256B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 30438865 
++ number of reads : 20813032 
++ number of writes : 9625833 
++ number of hits : 9995433 
++ number of misses : 20443432 
++ number of misses with write back : 5844825 
++ rate of misses : 0.671623 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large1.tr
++ Cache Size : 16KB
++ Block Size : 4B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 30438865 
++ number of reads : 20813032 
++ number of writes : 9625833 
++ number of hits : 22556885 
++ number of misses : 7881980 
++ number of misses with write back : 1838108 
++ rate of misses : 0.258945 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large1.tr
++ Cache Size : 16KB
++ Block Size : 16B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 30438865 
++ number of reads : 20813032 
++ number of writes : 9625833 
++ number of hits : 24930452 
++ number of misses : 5508413 
++ number of misses with write back : 834206 
++ rate of misses : 0.180966 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large1.tr
++ Cache Size : 16KB
++ Block Size : 32B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 30438865 
++ number of reads : 20813032 
++ number of writes : 9625833 
++ number of hits : 25349299 
++ number of misses : 5089566 
++ number of misses with write back : 670681 
++ rate of misses : 0.167206 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large1.tr
++ Cache Size : 16KB
++ Block Size : 64B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 30438865 
++ number of reads : 20813032 
++ number of writes : 9625833 
++ number of hits : 25535766 
++ number of misses : 4903099 
++ number of misses with write back : 597168 
++ rate of misses : 0.161080 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large1.tr
++ Cache Size : 16KB
++ Block Size : 128B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 30438865 
++ number of reads : 20813032 
++ number of writes : 9625833 
++ number of hits : 25539597 
++ number of misses : 4899268 
++ number of misses with write back : 593396 
++ rate of misses : 0.160954 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large1.tr
++ Cache Size : 16KB
++ Block Size : 256B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 30438865 
++ number of reads : 20813032 
++ number of writes : 9625833 
++ number of hits : 25262426 
++ number of misses : 5176439 
++ number of misses with write back : 676720 
++ rate of misses : 0.170060 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large1.tr
++ Cache Size : 128KB
++ Block Size : 4B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 30438865 
++ number of reads : 20813032 
++ number of writes : 9625833 
++ number of hits : 24892593 
++ number of misses : 5546272 
++ number of misses with write back : 1584935 
++ rate of misses : 0.182210 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large1.tr
++ Cache Size : 128KB
++ Block Size : 16B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 30438865 
++ number of reads : 20813032 
++ number of writes : 9625833 
++ number of hits : 27197881 
++ number of misses : 3240984 
++ number of misses with write back : 601420 
++ rate of misses : 0.106475 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large1.tr
++ Cache Size : 128KB
++ Block Size : 32B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 30438865 
++ number of reads : 20813032 
++ number of writes : 9625833 
++ number of hits : 27663331 
++ number of misses : 2775534 
++ number of misses with write back : 421101 
++ rate of misses : 0.091184 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large1.tr
++ Cache Size : 128KB
++ Block Size : 64B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 30438865 
++ number of reads : 20813032 
++ number of writes : 9625833 
++ number of hits : 27912018 
++ number of misses : 2526847 
++ number of misses with write back : 327138
++ rate of misses : 0.083014 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large1.tr
++ Cache Size : 128KB
++ Block Size : 128B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 30438865 
++ number of reads : 20813032 
++ number of writes : 9625833 
++ number of hits : 28036459 
++ number of misses : 2402406 
++ number of misses with write back : 280388 
++ rate of misses : 0.078926 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large1.tr
++ Cache Size : 128KB
++ Block Size : 256B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 30438865 
++ number of reads : 20813032 
++ number of writes : 9625833 
++ number of hits : 28087336 
++ number of misses : 2351529 
++ number of misses with write back : 259844 
++ rate of misses : 0.077254 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large2.tr
++ Cache Size : 1KB
++ Block Size : 4B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 36084985 
++ number of reads : 29411338 
++ number of writes : 6673647 
++ number of hits : 14105451 
++ number of misses : 21979534 
++ number of misses with write back : 6009564 
++ rate of misses : 0.609105 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large2.tr
++ Cache Size : 1KB
++ Block Size : 16B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 36084985 
++ number of reads : 29411338 
++ number of writes : 6673647 
++ number of hits : 15101861 
++ number of misses : 20983124 
++ number of misses with write back : 5370681 
++ rate of misses : 0.581492 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large2.tr
++ Cache Size : 1KB
++ Block Size : 32B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 36084985 
++ number of reads : 29411338 
++ number of writes : 6673647 
++ number of hits : 15950332 
++ number of misses : 20134653 
++ number of misses with write back : 5300659 
++ rate of misses : 0.557979 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large2.tr
++ Cache Size : 1KB
++ Block Size : 64B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 36084985 
++ number of reads : 29411338 
++ number of writes : 6673647 
++ number of hits : 16653119 
++ number of misses : 19431866 
++ number of misses with write back : 5070575 
++ rate of misses : 0.538503 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large2.tr
++ Cache Size : 1KB
++ Block Size : 128B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 36084985 
++ number of reads : 29411338 
++ number of writes : 6673647 
++ number of hits : 18116347 
++ number of misses : 17968638 
++ number of misses with write back : 3512642 
++ rate of misses : 0.497953 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large2.tr
++ Cache Size : 1KB
++ Block Size : 256B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 36084985 
++ number of reads : 29411338 
++ number of writes : 6673647 
++ number of hits : 17303508 
++ number of misses : 18781477 
++ number of misses with write back : 2916571  
++ rate of misses : 0.520479 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large2.tr
++ Cache Size : 16KB
++ Block Size : 4B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 36084985 
++ number of reads : 29411338 
++ number of writes : 6673647 
++ number of hits : 16803922 
++ number of misses : 19281063 
++ number of misses with write back : 5309638 
++ rate of misses : 0.534324 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large2.tr
++ Cache Size : 16KB
++ Block Size : 16B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 36084985 
++ number of reads : 29411338 
++ number of writes : 6673647 
++ number of hits : 16682990 
++ number of misses : 19401995 
++ number of misses with write back : 5150207 
++ rate of misses : 0.537675 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large2.tr
++ Cache Size : 16KB
++ Block Size : 32B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 36084985 
++ number of reads : 29411338 
++ number of writes : 6673647 
++ number of hits : 17987558 
++ number of misses : 18097427 
++ number of misses with write back : 5041223  
++ rate of misses : 0.501522 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large2.tr
++ Cache Size : 16KB
++ Block Size : 64B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 36084985 
++ number of reads : 29411338 
++ number of writes : 6673647 
++ number of hits : 19853185 
++ number of misses : 16231800 
++ number of misses with write back : 4720719 
++ rate of misses : 0.449821 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large2.tr
++ Cache Size : 16KB
++ Block Size : 128B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 36084985 
++ number of reads : 29411338 
++ number of writes : 6673647 
++ number of hits : 24032728 
++ number of misses : 12052257 
++ number of misses with write back : 2731109 
++ rate of misses : 0.333996 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large2.tr
++ Cache Size : 16KB
++ Block Size : 256B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 36084985 
++ number of reads : 29411338 
++ number of writes : 6673647 
++ number of hits : 27338249 
++ number of misses : 8746736 
++ number of misses with write back : 1632553  
++ rate of misses : 0.242393 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large2.tr
++ Cache Size : 128KB
++ Block Size : 4B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 36084985 
++ number of reads : 29411338 
++ number of writes : 6673647 
++ number of hits : 19283588 
++ number of misses : 16801397 
++ number of misses with write back : 4756396 
++ rate of misses : 0.465606 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large2.tr
++ Cache Size : 128KB
++ Block Size : 16B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 36084985 
++ number of reads : 29411338 
++ number of writes : 6673647 
++ number of hits : 19056036 
++ number of misses : 17028949 
++ number of misses with write back : 4711749 
++ rate of misses : 0.471912 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large2.tr
++ Cache Size : 128KB
++ Block Size : 32B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 36084985 
++ number of reads : 29411338 
++ number of writes : 6673647 
++ number of hits : 19706800 
++ number of misses : 16378185 
++ number of misses with write back : 4718167 
++ rate of misses : 0.453878 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large2.tr
++ Cache Size : 128KB
++ Block Size : 64B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 36084985 
++ number of reads : 29411338 
++ number of writes : 6673647 
++ number of hits : 20976669 
++ number of misses : 15108316 
++ number of misses with write back : 4476674 
++ rate of misses : 0.418687 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large2.tr
++ Cache Size : 128KB
++ Block Size : 128B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 36084985 
++ number of reads : 29411338 
++ number of writes : 6673647 
++ number of hits : 24759063 
++ number of misses : 11325922 
++ number of misses with write back : 2519399 
++ rate of misses : 0.313868 
+
+ ** opening file /afs/cs.pitt.edu/courses/1541/long_traces/sample_large2.tr
++ Cache Size : 128KB
++ Block Size : 256B
++ 4-way set associative
++ Replacement Policy : LRU
++ number of accesses : 36084985 
++ number of reads : 29411338 
++ number of writes : 6673647 
++ number of hits : 28200153 
++ number of misses : 7884832 
++ number of misses with write back : 1422492 
++ rate of misses : 0.218507 
