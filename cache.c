@@ -149,6 +149,7 @@ int main(int argc, char **argv)
       	printf("+ number of hits : %d \n", hits);
       	printf("+ number of misses : %d \n", misses);
       	printf("+ number of misses with write back : %d \n", misses_with_writeback);
+		printf("+ number of bytes written back : %lu \n", (unsigned long)(misses_with_writeback) * block_size);
 	miss_rate = (double)misses/accesses;
 	printf("+ rate of misses : %f \n", miss_rate);
 	  break;

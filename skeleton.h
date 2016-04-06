@@ -166,7 +166,10 @@ int is_miss(struct cache_t *cp, unsigned long access_tag, long access_index,
       cp->blocks[access_index][i].last_access = now;
       cp->blocks[access_index][i].first_access = now;
       cp->blocks[access_index][i].valid = 1;
-      cp->blocks[access_index][i].dirty = 1;
+	  if (access_type == 1)
+		cp->blocks[access_index][i].dirty = 1;
+	  else 
+		cp->blocks[access_index][i].dirty = 0;
       return 1; //miss with no writeback
     }
   }
@@ -183,7 +186,10 @@ int is_miss(struct cache_t *cp, unsigned long access_tag, long access_index,
     cp->blocks[access_index][new_index].last_access = now;
     cp->blocks[access_index][new_index].first_access = now;
     cp->blocks[access_index][new_index].valid = 1;
-    cp->blocks[access_index][new_index].dirty = 1;
+    if (access_type == 1)
+		cp->blocks[access_index][new_index].dirty = 1;
+	else 
+		cp->blocks[access_index][new_index].dirty = 0;
     return 1;
   }
   //case for miss with writeback
@@ -192,7 +198,10 @@ int is_miss(struct cache_t *cp, unsigned long access_tag, long access_index,
     cp->blocks[access_index][new_index].last_access = now;
     cp->blocks[access_index][new_index].first_access = now;
     cp->blocks[access_index][new_index].valid = 1;
-    cp->blocks[access_index][new_index].dirty = 1;
+    if (access_type == 1)
+		cp->blocks[access_index][new_index].dirty = 1;
+	else 
+		cp->blocks[access_index][new_index].dirty = 0;
     return 2;
   }
   return 0; //error occured
